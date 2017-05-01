@@ -60,8 +60,7 @@ socket.on('connection', (clientSocket) => {
                         ' has joined the chat');
 
             userColor = getRandomColor();
-            userId = uuidV4();
-
+            while(getClientSocketById((userId = uuidV4()))!=null);
             //Afegim nova connexió a les llistes
             index = clients.push({
                 socket: clientSocket,
